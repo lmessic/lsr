@@ -3,6 +3,7 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from './components/HelloWorld.vue'
 import MouseMoveVue from './components/MouseMove.vue';
+import SyncLocalStorageVue from './components/SyncLocalStorage.vue';
 
 const person = {
   name: '小明',
@@ -28,6 +29,7 @@ console.log('sex', personProxy.sex)
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + Vite" />
   <MouseMoveVue />
+  <SyncLocalStorageVue />
   <div>test origin</div>
 </template>
 
