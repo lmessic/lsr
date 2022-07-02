@@ -1,4 +1,4 @@
-import { ref } from "Vue"
+import { ref } from "vue"
 
 export default function useMouse() {
     let x = ref(0)
