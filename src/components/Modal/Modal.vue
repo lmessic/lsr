@@ -2,8 +2,13 @@
   <div class="modal" v-if="props.modelValue">
     <div class="modal-content">
       <div class="modal-header">{{props.title}}</div>
-      <div class="modal-body">{{props.content}}</div>
-      <FooterVue />
+      <div class="modal-body">
+        <div>{{props.content}}</div>
+        <slot></slot>
+      </div>
+      <!-- <FooterVue @onOk="onOk" /> -->
+      <button @click="onCancel">取消</button>
+      <button @click="onOk">确定</button>
     </div>
   </div>
 </template>
@@ -27,7 +32,7 @@
     emit('update:modelValue', false)
   }
   const onOk = () => {
-    emit('handleOk', false)
+    emit('update:modelValue', false)
   }
 </script>
 <style scoped>
