@@ -25,10 +25,10 @@ person.sex = 'male'
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <router-link to="/login">login</router-link>
     <router-link to="/home">home</router-link>
-  </div>
+  </div> -->
   <router-view />
 </template>
 

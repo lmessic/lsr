@@ -3,7 +3,6 @@ import { InjectionKey } from 'vue';
 import { createStore, Store } from 'vuex';
 
 import Login from '../pages/login.vue';
-import Home from '../pages/home.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,9 +10,15 @@ const routes: Array<RouteRecordRaw> = [
     component: Login,
   },
   {
-    path: '/home',
-    component: Home,
-  }
+    path: '/',
+    name: 'Home',
+    redirect: '/home',
+    meta: {
+      title: '首页',
+      keepAlive: false,
+    },
+    component: import('@pages/home.vue')
+  },
 ]
 
 const router: Router = createRouter({
@@ -21,5 +26,4 @@ const router: Router = createRouter({
   history: createWebHashHistory()
 })
 
-export const key: InjectionKey<Store<State>> = Symbol()
 export default router;
