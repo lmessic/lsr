@@ -6,7 +6,10 @@
     "test": "vite --mode test",
     "prod": "vite --mode production",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "eslint:comment": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .js 和 .vue 的文件",
+    "eslint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.9",
@@ -16,9 +19,17 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^2.0.0",
     "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.19.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "husky": "^8.0.1",
     "js-md5": "^0.7.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "unplugin-vue-components": "^0.21.0",
     "vite": "^2.7.2"
   }
