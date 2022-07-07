@@ -1,9 +1,9 @@
 <template>
-  <div class="modal" v-if="props.modelValue">
+  <div v-if="props.modelValue" class="modal">
     <div class="modal-content">
-      <div class="modal-header">{{props.title}}</div>
+      <div class="modal-header">{{ props.title }}</div>
       <div class="modal-body">
-        <div>{{props.content}}</div>
+        <div>{{ props.content }}</div>
         <slot></slot>
       </div>
       <!-- <FooterVue @onOk="onOk" /> -->
@@ -13,34 +13,34 @@
   </div>
 </template>
 <script setup>
-  import { defineProps, defineEmits } from 'vue';
-  import FooterVue from './Footer.vue';
+import { defineProps, defineEmits } from "vue";
+import FooterVue from "./Footer.vue";
 
-  const props = defineProps({
-    title: String,
-    content: String,
-    modelValue: {
-      type: Boolean,
-      default: false,
-    }
-  })
+const props = defineProps({
+  title: String,
+  content: String,
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+});
 
-  const emit = defineEmits(['update:modelValue', 'handleCancel', 'handleOk'])
+const emit = defineEmits(["update:modelValue", "handleCancel", "handleOk"]);
 
-  const onCancel = () => {
-    // emit('handleCancel', false)
-    emit('update:modelValue', false)
-  }
-  const onOk = () => {
-    emit('update:modelValue', false)
-  }
+const onCancel = () => {
+  // emit('handleCancel', false)
+  emit("update:modelValue", false);
+};
+const onOk = () => {
+  emit("update:modelValue", false);
+};
 </script>
 <style scoped>
 .modal {
   width: 100%;
   height: 100vh;
   background: #ccc;
-  position: relative
+  position: relative;
 }
 .modal-content {
   width: 500px;

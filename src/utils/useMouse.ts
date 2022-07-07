@@ -1,13 +1,13 @@
-import { ref } from "vue"
+import { ref } from "vue";
 
 export default function useMouse() {
-    let x = ref(0)
-    let y = ref(0)
+  const x = ref(0);
+  const y = ref(0);
 
-    window.addEventListener('mousemove', (event: MouseEvent) => {
-        x.value = event.pageX
-        y.value = event.pageY
-    })
+  window.addEventListener("mousemove", (event: MouseEvent) => {
+    x.value = event.pageX;
+    y.value = event.pageY;
+  });
 
-    return {x, y}
+  return { x, y };
 }

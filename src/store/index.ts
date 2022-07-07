@@ -1,34 +1,34 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 interface State {
-  count: number
+  count: number;
 }
 
 const store = createStore<State>({
   state() {
     return {
       count: 0,
-    }
+    };
   },
   mutations: {
     add(state) {
-      state.count++
+      state.count++;
     },
     set(state, count) {
-      state.count = count
-    }
+      state.count = count;
+    },
   },
   actions: {
-    getCount({commit}) {
+    getCount({ commit }) {
       // getCountApi().then((res) => {
       //   commit('set', res)
       // })
-    }
+    },
   },
   modules: {
     // useStore,
     // orderStore
-  }
-})
+  },
+});
 
-export default store
+export default store;
