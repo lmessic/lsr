@@ -24,7 +24,7 @@ module.exports = {
     ],
     "type-case": [2, "always", "lower-case"], // <type> 格式 小写
     "type-empty": [2, "never"], // <type> 不能为空
-    "scope-empty": [0], // <scope> 范围不能为空
+    "scope-empty": [0], // <scope> 范围可以为空
     "scope-case": [0], // <scope> 范围格式
     "subject-empty": [2, "never"], // 主要message不能为空
     "subject-full-stop": [0, "never"], // 以什么为结束标志，禁用

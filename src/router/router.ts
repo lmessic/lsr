@@ -3,16 +3,15 @@ import {
   createWebHashHistory,
   Router,
   RouteRecordRaw,
+  createWebHistory,
 } from "vue-router";
 import { InjectionKey } from "vue";
 import { createStore, Store } from "vuex";
 
-import Login from "../pages/login.vue";
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
-    component: Login,
+    component: import("@/pages/login.vue"),
   },
   {
     path: "/",
@@ -22,13 +21,13 @@ const routes: Array<RouteRecordRaw> = [
       title: "首页",
       keepAlive: false,
     },
-    component: import("@pages/home.vue"),
+    component: import("@/pages/home.vue"),
   },
 ];
 
 const router: Router = createRouter({
   routes,
-  history: createWebHashHistory(),
+  history: createWebHistory(),
 });
 
 export default router;
