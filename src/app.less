@@ -1,0 +1,16 @@
+@color: red;
+
+.lessBox {
+  width: 100%;
+  height: 100%;
+  .box {
+    color: @color;
+    background-color: lightblue;
+    transform: translateX(100);
+
+    &:before {
+      @arr: 'hello', 'world';
+      content: `@{arr}.join(' ').toUpperCase()`;
+    }
+  }
+}

@@ -1,7 +1,12 @@
-import './App.css';
+// import './app.less';
+import lessStyles from './app.less';
 
 function App() {
-  return <h2>Hello World，hello lmessic</h2>
+  return (
+    <div className={lessStyles['lessBox']}>
+      <h2>Hello World，hello lmessic</h2>
+    </div>
+  )
 }
 
 export default App;
