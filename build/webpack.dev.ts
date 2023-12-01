@@ -51,13 +51,9 @@ const devServer = new WebpackDevServer(
 );
 
 devServer.start().then(async () => {
-	try {
-		const port = await portfinder.getPortPromise();
-		// 启动界面
-		openBrowser(`http://${host}:${port}`);
-	} catch (error) {
-		throw new Error(error);
-	}
+	const port = await portfinder.getPortPromise();
+	// 启动界面
+	openBrowser(`http://${host}:${port}`);
 });
 
 export default devConfig;
