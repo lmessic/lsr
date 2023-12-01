@@ -1,17 +1,9 @@
 import { Suspense, lazy, useState } from 'react';
 import lessStyles from './app.less';
-import memberList from './test.json';
 import Class from './components/Class';
-import { Demo1 } from '@/components';
+import Demo1 from '@/components/demo1';
+import Counter from './features/counter/counter';
 
-const PreFetchDemo = lazy(
-	() =>
-		import(
-			/* webpackChunkName: PreFetchDemo */
-			/* webpackPrefetch: true */
-			'@/components/PreFetchDemo'
-		)
-);
 const PreloadDemo = lazy(
 	() =>
 		import(
@@ -23,7 +15,6 @@ const PreloadDemo = lazy(
 
 function App() {
 	// eslint-disable-next-line no-console
-	console.log('memberList', memberList);
 	const [show, setShow] = useState<boolean>(false);
 
 	const handleClick = () => {
@@ -40,13 +31,11 @@ function App() {
 			{show && (
 				<>
 					<Suspense fallback={null}>
-						<PreFetchDemo />
-					</Suspense>
-					<Suspense fallback={null}>
 						<PreloadDemo />
 					</Suspense>
 				</>
 			)}
+			<Counter />
 		</div>
 	);
 }
