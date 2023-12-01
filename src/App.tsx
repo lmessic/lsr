@@ -22,9 +22,9 @@ function App() {
 	};
 
 	return (
-		<div className={lessStyles.lessBox}>
-			<h2>Hello World，hello lmessic</h2>
-			<div className={lessStyles.lessBox_lol}>云顶之弈</div>
+		<div className={lessStyles['less-box']}>
+			<h2>Hello World，hello lmessic.</h2>
+			<div className={lessStyles['less-box_lol']}>云顶之弈</div>
 			<Class />
 			<Demo1 />
 			<h2 onClick={handleClick}>展示</h2>

@@ -4,8 +4,8 @@
 		"dist": true,
 		"pnpm-lock.yaml": true
 	},
-	"files.autoSave": "onFocusChange",
-	"editor.formatOnSave": true,
+	// "files.autoSave": "onFocusChange",
+	// "editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
@@ -31,11 +31,11 @@
 	},
 	"javascript.validate.enable": false,
 
-	"editor.codeActionsOnSave": {
-		"source.fixAll.markdownlint": true,
-		"source.fixAll.stylelint": true,
-		"source.fixAll.eslint": true
-	},
+	// "editor.codeActionsOnSave": {
+	// 	"source.fixAll.markdownlint": true,
+	// 	"source.fixAll.stylelint": true,
+	// 	"source.fixAll.eslint": true
+	// },
 	"stylelint.validate": ["css", "less", "sass", "stylus", "postcss"],
 	"eslint.enable": true,
 	"[less]": {

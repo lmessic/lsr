@@ -3,16 +3,19 @@ import { merge } from 'webpack-merge';
 import webpack, { Configuration as WebpackConfiguration } from 'webpack';
 import WebpackDevServer, { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import portfinder from 'portfinder';
 import baseConfig from './webpack.base';
+
+const host = '127.0.0.1';
+const port = 8080;
+
+portfinder.basePort = port;
 
 const openBrowser = require('./util/openBrowser');
 
 interface Configuration extends WebpackConfiguration {
 	devServer?: WebpackDevServerConfiguration;
 }
-
-const host = '127.0.0.1';
-const port = '8080';
 
 // 合并公共配置,并添加开发环境配置
 const devConfig: Configuration = merge(baseConfig, {
@@ -30,7 +33,6 @@ const devConfig: Configuration = merge(baseConfig, {
 
 const devServer = new WebpackDevServer(
 	{
-		host,
 		port,
 		open: false, // 是否自动打开
 		compress: false, // gzip压缩,开发环境不开启，提升热更新速度
@@ -48,9 +50,14 @@ const devServer = new WebpackDevServer(
 	webpack(devConfig)
 );
 
-devServer.start().then(() => {
-	// 启动界面
-	openBrowser(`http://${host}:${port}`);
+devServer.start().then(async () => {
+	try {
+		const port = await portfinder.getPortPromise();
+		// 启动界面
+		openBrowser(`http://${host}:${port}`);
+	} catch (error) {
+		throw new Error(error);
+	}
 });
 
 export default devConfig;
