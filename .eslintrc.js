@@ -31,11 +31,10 @@ module.exports = {
 		'no-restricted-syntax': 0,
 		'consistent-return': 0,
 		'@typescript-eslint/ban-types': 'off',
-		// "import/no-extraneous-dependencies": "off",
 		'@typescript-eslint/no-non-null-assertion': 'off',
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off', // 关闭默认使用 export default 方式导出
-		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+		'import/no-extraneous-dependencies': [0, { devDependencies: true, peerDependencies: true }],
 		'@typescript-eslint/no-use-before-define': 0,
 		'no-use-before-define': 0,
 		'@typescript-eslint/no-var-requires': 0,

@@ -40,7 +40,10 @@ const devServer = new WebpackDevServer(
 		static: {
 			directory: path.join(__dirname, '../public') // 托管静态资源public文件夹
 		},
-		headers: { 'Access-Control-Allow-Origin': '*' }
+		headers: { 'Access-Control-Allow-Origin': '*' },
+		proxy: {
+			'/api': 'http://127.0.0.1:8080'
+		}
 	},
 	webpack(devConfig)
 );
