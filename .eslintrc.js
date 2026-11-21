@@ -5,6 +5,10 @@ module.exports = {
 		es2021: true,
 		node: true
 	},
+	globals: {
+		__webpack_public_path__: 'writable',
+		__INJECTED_PUBLIC_PATH_BY_QIANKUN__: 'readonly'
+	},
 	extends: [
 		'airbnb-base',
 		'eslint:recommended',
@@ -41,6 +45,8 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-namespace': 'off', // 禁止使用自定义 TypeScript 模块和命名空间。
 		'no-shadow': 'off',
+		'no-underscore-dangle': 'off',
+		camelcase: 'off',
 		// "@typescript-eslint/no-var-requires": "off"
 		'import/extensions': [
 			'error',
